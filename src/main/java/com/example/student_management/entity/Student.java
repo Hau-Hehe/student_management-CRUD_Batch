@@ -1,9 +1,11 @@
 package com.example.student_management.entity;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 
 @Entity
 @Table(name = "students")
+@Builder
 public class Student {
 
     @Id

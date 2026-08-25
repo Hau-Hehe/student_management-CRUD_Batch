@@ -10,6 +10,5 @@ import lombok.NoArgsConstructor;
 public class StudentSaveDTO {
     private String studentName;
     private String address;
-
     private String phone;
 }

@@ -7,30 +7,23 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "students")
+@Table(name = "teachers")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Builder
-public class Student {
-
+public class Teacher {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "student_id", length = 11)
-    private int studentId;
+    @Column(name = "teacher_id", length = 11)
+    private int teacherId;
 
-    @Column(name = "student_name", length = 45)
-    private String studentName;
+    @Column(name = "teacher_name", length = 45)
+    private String teacherName;
 
     @Column(name = "addess", length = 60)
     private String address;
 
     @Column(name = "phone", length = 10)
     private String phone;
-
-    public Student(String studentName, String address, String phone) {
-        this.studentName = studentName;
-        this.address = address;
-        this.phone = phone;
-    }
 }

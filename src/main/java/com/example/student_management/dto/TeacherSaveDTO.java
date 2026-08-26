@@ -1,15 +1,16 @@
 package com.example.student_management.dto;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Data
-public class StudentUpdateDTO {
-    private int studentId;
-    private String studentName;
+@Builder
+public class TeacherSaveDTO {
+    private String teacherName;
     private String address;
     private String phone;
 }

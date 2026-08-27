@@ -2,6 +2,7 @@ package com.example.student_management.service;
 
 import com.example.student_management.dto.TeacherDTO;
 import com.example.student_management.dto.TeacherSaveDTO;
+import com.example.student_management.dto.TeacherUpdateDTO;
 
 import java.util.List;
 
@@ -10,7 +11,7 @@ public interface TeacherService {
 
     List<TeacherDTO> getAllTeachers();
 
-    TeacherDTO updateTeacher(int id, TeacherSaveDTO teacherSaveDTO);
+    TeacherDTO updateTeacher(int id, TeacherUpdateDTO teacherUpdateDTO);
 
     void deleteTeacher(int id);
 }

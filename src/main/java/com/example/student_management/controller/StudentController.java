@@ -3,6 +3,7 @@ package com.example.student_management.controller;
 
 import com.example.student_management.dto.StudentDTO;
 import com.example.student_management.dto.StudentSaveDTO;
+import com.example.student_management.dto.StudentUpdateDTO;
 import com.example.student_management.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,8 +31,8 @@ public class StudentController {
     }
 
     @PutMapping("/updateStudent/{id}")
-    public ResponseEntity<StudentDTO> updateStudent(@PathVariable int id, @RequestBody StudentSaveDTO studentSaveDTO) {
-        return ResponseEntity.ok(studentService.updateStudent(id, studentSaveDTO));
+    public ResponseEntity<StudentDTO> updateStudent(@PathVariable int id, @RequestBody StudentUpdateDTO studentUpdateDTO) {
+        return ResponseEntity.ok(studentService.updateStudent(id, studentUpdateDTO));
     }
 
     @DeleteMapping("/deleteStudent/{id}")

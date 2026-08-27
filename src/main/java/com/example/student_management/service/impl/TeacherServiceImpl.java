@@ -2,6 +2,7 @@ package com.example.student_management.service.impl;
 
 import com.example.student_management.dto.TeacherDTO;
 import com.example.student_management.dto.TeacherSaveDTO;
+import com.example.student_management.dto.TeacherUpdateDTO;
 import com.example.student_management.entity.Teacher;
 import com.example.student_management.exception.ResourceException;
 import com.example.student_management.mapper.TeacherMapper;
@@ -36,13 +37,14 @@ public class TeacherServiceImpl implements TeacherService{
     }
 
     @Override
-    public TeacherDTO updateTeacher(int id, TeacherSaveDTO teacherSaveDTO) {
+    public TeacherDTO updateTeacher(int id, TeacherUpdateDTO teacherUpdateDTO) {
         Teacher existingTeacher = teacherRepo.findById(id)
                 .orElseThrow(() -> new ResourceException("Teacher not found by id" + id));
-        existingTeacher.setTeacherName(teacherSaveDTO.getTeacherName());
-        existingTeacher.setAddress(teacherSaveDTO.getAddress());
-        existingTeacher.setPhone(teacherSaveDTO.getPhone());
-        return teacherMapper.toDTO(existingTeacher);
+        existingTeacher.setTeacherName(teacherUpdateDTO.getTeacherName());
+        existingTeacher.setAddress(teacherUpdateDTO.getAddress());
+        existingTeacher.setPhone(teacherUpdateDTO.getPhone());
+        Teacher saveTeacher = teacherRepo.save(existingTeacher);
+        return teacherMapper.toDTO(saveTeacher);
     }
 
     @Override

@@ -1,9 +1,6 @@
 package com.example.student_management.controller;
 
-import com.example.student_management.dto.StudentDTO;
-import com.example.student_management.dto.StudentSaveDTO;
-import com.example.student_management.dto.TeacherDTO;
-import com.example.student_management.dto.TeacherSaveDTO;
+import com.example.student_management.dto.*;
 import com.example.student_management.service.StudentService;
 import com.example.student_management.service.TeacherService;
 import lombok.AllArgsConstructor;
@@ -35,8 +32,8 @@ public class TeacherController {
     }
 
     @PutMapping("/updateTeacher/{id}")
-    public ResponseEntity<TeacherDTO> updateTeacher(@PathVariable int id, @RequestBody TeacherSaveDTO teacherSaveDTO) {
-        return ResponseEntity.ok(teacherService.updateTeacher(id, teacherSaveDTO));
+    public ResponseEntity<TeacherDTO> updateTeacher(@PathVariable int id, @RequestBody TeacherUpdateDTO teacherUpdateDTO) {
+        return ResponseEntity.ok(teacherService.updateTeacher(id, teacherUpdateDTO));
     }
 
     @DeleteMapping("/deleteTeacher/{id}")

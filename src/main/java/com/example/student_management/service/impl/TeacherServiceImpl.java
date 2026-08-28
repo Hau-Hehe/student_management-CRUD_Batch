@@ -10,11 +10,12 @@ import com.example.student_management.repository.TeacherRepo;
 import com.example.student_management.service.TeacherService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Component
+@Service
 @RequiredArgsConstructor
 public class TeacherServiceImpl implements TeacherService{
 

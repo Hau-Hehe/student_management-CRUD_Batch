@@ -3,6 +3,10 @@ package com.example.student_management.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
 @Entity
 @Table(name = "courses")
 @Data
@@ -27,4 +31,8 @@ public class Course {
     @NonNull
     @Column(name = "duration", length = 10)
     private String duration;
+
+    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Builder.Default
+    private List<Batch> batches = new ArrayList<>();
 }

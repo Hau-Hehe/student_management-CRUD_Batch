@@ -3,7 +3,9 @@ package com.example.student_management.mapper;
 import com.example.student_management.dto.CourseDTO;
 import com.example.student_management.dto.CourseSaveDTO;
 import com.example.student_management.entity.Course;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CourseMapper {
     public CourseDTO toDTO(Course course) {
         if(course == null) return null;
